@@ -118,6 +118,7 @@ public class Game extends ApplicationAdapter {
             otherBody = world.createBody(otherBodyDef);
             otherBody.setTransform(r.nextInt(1820), r.nextInt(980), 0);
             otherBody.setUserData("ii");
+            otherFixture = null;
             otherFixture = otherBody.createFixture(otherShape, 1f);
             System.out.println("lalalaw");
         }

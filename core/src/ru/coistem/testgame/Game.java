@@ -112,18 +112,14 @@ public class Game extends ApplicationAdapter {
     @Override
     public void render() {
         if (otherBody.getUserData().equals("0hp")) {
-            otherBody = null;
-        }
-        if (otherBody == null) {
-            otherBody = world.createBody(otherBodyDef);
             otherBody.setTransform(r.nextInt(1820), r.nextInt(980), 0);
             otherBody.setUserData("ii");
-            otherFixture = null;
             otherFixture = otherBody.createFixture(otherShape, 1f);
+            otherFixture.setUserData("ii");
             System.out.println("lalalaw");
         }
 
-        Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+        Gdx.gl.glClearColor(0.3f, 0.3f, 0.7f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         for (int i = 0; i < bullets.size(); i++) {
